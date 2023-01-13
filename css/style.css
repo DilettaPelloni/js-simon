@@ -1,7 +1,12 @@
-#number-box span {
+span {
     margin: 1rem;
+    font-size: 2rem;
 }
 
-#number-box.invisible {
+.invisible {
     opacity: 0;
+}
+
+#timer-box {
+    margin-top: 2rem;
 }

@@ -40,6 +40,8 @@ function sameElementArray(array1, array2) {
 
 //vado a prendere la number box
 const numberBox = document.getElementById('number-box');
+//vado a prendere la timer box
+const timerBox = document.getElementById('timer-box');
 
 //creo un array in cui inserire i numeri da memorizzare
 const gameArray = [];
@@ -56,10 +58,28 @@ for (let i = 1; i <= 5; i++) {
     gameArray.push(span.innerText);
 }
 
+//mostro un timer di 30 secondi
+//creo il contatore dei secondi
+let seconds = 30;
+
+let timer = setInterval(function() {
+    //scrivo in html i secondi rimanenti
+    document.getElementById('seconds').innerText = seconds;
+
+    //decremento i secondi
+    seconds--;
+
+    //quando arrivo a 0
+    if (seconds == 0) {
+        clearInterval (timer);
+    }
+}, 1000)
+
 //dopo 30 secondi nascondo la number box
 setTimeout (function() {
-    //rendo invisibile la numebr box
+    //rendo invisibili le box
     numberBox.classList.add('invisible');
+    timerBox.classList.add('invisible');
 
     //dopo 1 secondo chiedo i 5 numeri
     setTimeout (function() {
@@ -93,7 +113,7 @@ setTimeout (function() {
         }
     }, 1000);
 
-}, 2000);
+}, 30000);
 
 
 
