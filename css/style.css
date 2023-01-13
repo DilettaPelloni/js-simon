@@ -1,3 +1,7 @@
 #number-box span {
     margin: 1rem;
 }
+
+#number-box.invisible {
+    opacity: 0;
+}
